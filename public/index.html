@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agendamento Multiuso</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>📅 Sistema de Agendamento</h1>
+
+  <form id="bookingForm">
+    <label>
+      Cliente:
+      <input type="text" id="client_name" required placeholder="Nome completo" />
+    </label>
+    <label>
+      Telefone:
+      <input type="tel" id="client_phone" required placeholder="(00) 00000-0000" />
+    </label>
+    <label>
+      Serviço:
+      <select id="service_id" required>
+        <option value="">Carregando serviços...</option>
+      </select>
+    </label>
+    <label>
+      Data/Hora:
+      <input type="datetime-local" id="starts_at" required />
+    </label>
+    <button type="submit">✅ Agendar</button>
+  </form>
+
+  <h2>📋 Agendamentos do Dia</h2>
+  <input type="date" id="filterDate" />
+  <ul id="bookingsList">
+    <li style="color:#666">Carregando...</li>
+  </ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
