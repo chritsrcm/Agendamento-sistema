@@ -2,40 +2,177 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agendamento Multiuso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitta Estética | Clínica de Estética em Anápolis</title>
+  
+  <!-- ✨ Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>📅 Sistema de Agendamento</h1>
+  <header class="site-header">
+    <a class="brand" href="#top" id="headerCompanyName">Vitta Estética</a>
+    <nav aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#agendar">Agendar</a>
+    </nav>
+  </header>
 
-  <form id="bookingForm">
-    <label>
-      Cliente:
-      <input type="text" id="client_name" required placeholder="Nome completo" />
-    </label>
-    <label>
-      Telefone:
-      <input type="tel" id="client_phone" required placeholder="(00) 00000-0000" />
-    </label>
-    <label>
-      Serviço:
-      <select id="service_id" required>
-        <option value="">Carregando serviços...</option>
-      </select>
-    </label>
-    <label>
-      Data/Hora:
-      <input type="datetime-local" id="starts_at" required />
-    </label>
-    <button type="submit">✅ Agendar</button>
-  </form>
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow">Clínica de estética em Anápolis</p>
+        <h1 id="heroTitle">Vitta Estética</h1>
+        <p>Tratamentos faciais e corporais com técnica e acolhimento .</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#agendar">Agendar horário</a>
+          <a class="button secondary" href="procedimentos.html">Explicação dos procedimentos</a>
+        </div>
+      </div>
+    </section>
 
-  <h2>📋 Agendamentos do Dia</h2>
-  <input type="date" id="filterDate" />
-  <ul id="bookingsList">
-    <li style="color:#666">Carregando...</li>
-  </ul>
+    <section class="about-section" id="sobre" aria-labelledby="aboutTitle">
+      <div class="section-copy">
+        <p class="eyebrow">Sobre a profissional</p>
+        <h2 id="aboutTitle">Lívia Roberta</h2>
+        <p class="lead">Esteticista e cosmetóloga, movida por aprendizado constante e pelo compromisso de entregar cuidado estético com responsabilidade.</p>
+        <p>A Vitta Estética une atendimento humanizado, biossegurança e protocolos pensados para valorizar bem-estar, autoestima e resultados naturais.</p>
+      </div>
+
+      <div class="bio-panel">
+        <img src="assets/livia-retrato.jpg" alt="Retrato profissional de Lívia Roberta" />
+        <div>
+          <span>Atendimento</span>
+          <strong id="businessHoursSummary">Segunda a sexta, 18:00 às 21:30. Sábado e domingo, 14:00 às 19:00.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="procedimentos" aria-labelledby="servicesTitle">
+      <div class="section-heading">
+        <p class="eyebrow">Procedimentos</p>
+        <h2 id="servicesTitle">Protocolos da clínica</h2>
+        <a class="text-link" href="procedimentos.html">Ler explicação completa</a>
+      </div>
+      <div id="servicesPreview" class="services-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- ✨ GALERIA CORRIGIDA – Layout simétrico e equilibrado -->
+    <section class="work-section" id="trabalhos" aria-labelledby="workTitle">
+      <div class="section-heading">
+        <p class="eyebrow">Trabalhos reais</p>
+        <h2 id="workTitle">Um pouco do cuidado em prática</h2>
+      </div>
+
+      <div class="work-grid">
+        <!-- ✨ Removidas as classes "large" e "wide" que quebravam o grid -->
+        <figure class="work-item">
+          <img src="assets/procedimento-facial-mascara.jpg" alt="Tratamento facial com máscara na Vitta Estética" />
+          <figcaption>Protocolos faciais</figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="assets/procedimento-ventosas.jpg" alt="Procedimento com ventosas" />
+          <figcaption>Ventosas</figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="assets/procedimento-massagem.jpg" alt="Massagem corporal estética" />
+          <figcaption>Massagens</figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="assets/procedimento-limpeza-pele.jpg" alt="Limpeza de pele com lupa estética" />
+          <figcaption>Limpeza de pele</figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="assets/resultado-corporal-antes-depois.jpg" alt="Resultado corporal antes e depois" />
+          <figcaption>Resultados corporais</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="booking-section" id="agendar" aria-labelledby="bookingTitle">
+      <div class="section-heading">
+        <p class="eyebrow">Agenda online</p>
+        <h2 id="bookingTitle">Reserve seu horário</h2>
+      </div>
+
+      <div class="booking-layout">
+        <form id="bookingForm" class="booking-panel">
+          <div class="field-grid">
+            <label>
+              Nome
+              <input type="text" id="client_name" required maxlength="100" placeholder="Seu nome completo" />
+            </label>
+
+            <label>
+              Contato para retorno
+              <input type="tel" id="client_phone" required maxlength="20" placeholder="Seu WhatsApp" />
+            </label>
+          </div>
+
+          <div class="field-grid">
+            <label>
+              Procedimento
+              <select id="service_id" required>
+                <option value="">Carregando procedimentos...</option>
+              </select>
+            </label>
+
+            <label>
+              Data
+              <input type="date" id="bookingDate" required />
+            </label>
+          </div>
+
+          <div class="slots-header">
+            <span>Horários disponíveis</span>
+            <small id="availabilityMeta"></small>
+          </div>
+          <div id="slotsGrid" class="slots-grid" aria-live="polite">
+            <p class="empty-state">Selecione um procedimento e uma data.</p>
+          </div>
+
+          <button type="submit" id="submitButton" disabled>Confirmar agendamento</button>
+          <p id="formMessage" class="form-message" role="status"></p>
+        </form>
+
+        <aside class="clinic-panel">
+          <img src="assets/procedimento-produtos.jpg" alt="Produtos utilizados nos protocolos da Vitta Estética" />
+          <div class="clinic-panel-content">
+            <p class="eyebrow">Informações</p>
+            <h2>Vitta Estética</h2>
+            <dl class="contact-list">
+              <div>
+                <dt>Horários</dt>
+                <dd id="businessHours">Segunda a sexta, 18:00 às 21:30. Sábado e domingo, 14:00 às 19:00.</dd>
+              </div>
+              <div>
+                <dt>Endereço</dt>
+                <dd id="clinicAddress">Av. 10, Jardim Progresso, Anápolis - Goiás</dd>
+              </div>
+              <div>
+                <dt>E-mail</dt>
+                <dd id="clinicEmail">liviaestetica4@gmail.com</dd>
+              </div>
+              <div>
+                <dt>Instagram</dt>
+                <dd><a id="instagramLink" href="https://www.instagram.com/liviaroberta_estetica?igsh=MXNlZjN1OHgzNmlzeg%3D%3D" target="_blank" rel="noopener noreferrer">@livia_roberta_estetica</a></dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Vitta Estética</span>
+    <span>Atendimento com hora marcada em Anápolis - Goiás</span>
+  </footer>
 
   <script src="app.js"></script>
 </body>
